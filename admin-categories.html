@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Categories - QuickMart PK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Top Header -->
+    <header class="admin-header">
+        <div class="admin-header-container">
+            <!-- Logo -->
+            <div class="admin-logo">
+                <img src="assets/quickmart-logo.png" alt="QuickMart PK" class="logo-image">
+            </div>
+            
+            <!-- Header Icons -->
+            <div class="admin-header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Left Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-item">
+                    <i class="fas fa-box"></i>
+                    <span>Manage Products</span>
+                </div>
+                <div class="nav-item active">
+                    <i class="fas fa-folder"></i>
+                    <span>Manage Categories</span>
+                </div>
+            </nav>
+            
+            <div class="admin-actions">
+                <button class="logout-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Logout
+                </button>
+                <p class="admin-actions-text">Admin Actions</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-content">
+                <h1 class="admin-title">Admin Dashboard</h1>
+                
+                <div class="section-header">
+                    <h2 class="section-title">Category Management</h2>
+                    <button class="add-product-btn">
+                        <i class="fas fa-plus"></i>
+                        Add New Category
+                    </button>
+                </div>
+
+                <!-- Categories Table -->
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr class="table-header">
+                                <th class="image-col">Image</th>
+                                <th class="name-col">Category Name</th>
+                                <th class="description-col">Description</th>
+                                <th class="products-col">Products</th>
+                                <th class="actions-col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Category 1 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=60&h=60&fit=crop" alt="Fruits" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Fruits</td>
+                                <td class="description-cell">Fresh seasonal fruits and organic produce</td>
+                                <td class="products-cell">24</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="fruits">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="fruits">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 2 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=60&h=60&fit=crop" alt="Vegetables" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Vegetables</td>
+                                <td class="description-cell">Fresh vegetables and leafy greens</td>
+                                <td class="products-cell">18</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="vegetables">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="vegetables">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 3 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=60&h=60&fit=crop" alt="Dairy" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Dairy</td>
+                                <td class="description-cell">Milk, cheese, yogurt and dairy products</td>
+                                <td class="products-cell">12</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="dairy">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="dairy">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 4 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=60&h=60&fit=crop" alt="Beverages" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Beverages</td>
+                                <td class="description-cell">Drinks, juices, and refreshments</td>
+                                <td class="products-cell">15</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="beverages">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="beverages">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 5 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=60&h=60&fit=crop" alt="Snacks" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Snacks</td>
+                                <td class="description-cell">Chips, nuts, and snack foods</td>
+                                <td class="products-cell">22</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="snacks">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="snacks">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 6 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=60&h=60&fit=crop" alt="Bakery" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Bakery</td>
+                                <td class="description-cell">Fresh bread, pastries, and baked goods</td>
+                                <td class="products-cell">8</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="bakery">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="bakery">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 7 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=60&h=60&fit=crop" alt="Meat & Seafood" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Meat & Seafood</td>
+                                <td class="description-cell">Fresh meat, poultry, and seafood</td>
+                                <td class="products-cell">16</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="meat">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="meat">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Category 8 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=60&h=60&fit=crop" alt="Pantry" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Pantry</td>
+                                <td class="description-cell">Canned goods, oils, and pantry staples</td>
+                                <td class="products-cell">31</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-category="pantry">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-category="pantry">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

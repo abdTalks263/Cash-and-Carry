@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - QuickMart PK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/quickmart-logo.png" alt="QuickMart PK" class="logo-image">
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="cart.html" class="nav-link active">Cart <span class="cart-count" style="display: none;">0</span></a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="admin.html" class="nav-link admin-dashboard-link" style="display: none;">Admin Dashboard</a>
+                <a href="#" class="nav-link logout-link" style="display: none;">Logout</a>
+            </nav>
+            
+            <!-- Header Icons -->
+            <div class="header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="cart-main">
+        <div class="cart-container">
+            <h1 class="cart-title">Shopping Cart</h1>
+            
+            <div class="cart-table-container">
+                <table class="cart-table">
+                    <thead>
+                        <tr class="cart-header">
+                            <th class="product-col">PRODUCT</th>
+                            <th class="quantity-col">QUANTITY</th>
+                            <th class="price-col">PRICE</th>
+                            <th class="total-col">TOTAL</th>
+                            <th class="actions-col">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product 1 -->
+                        <tr class="cart-item">
+                            <td class="product-cell">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=80&h=80&fit=crop" alt="Organic Gala Apples" class="product-thumbnail">
+                                    <span class="product-name">Organic Gala Apples (5 lb bag)</span>
+                                </div>
+                            </td>
+                            <td class="quantity-cell">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus-btn" data-product="apples">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-product="apples" data-price="8.99">
+                                    <button class="quantity-btn plus-btn" data-product="apples">+</button>
+                                </div>
+                            </td>
+                            <td class="price-cell">$8.99</td>
+                            <td class="total-cell" data-product="apples">$8.99</td>
+                            <td class="actions-cell">
+                                <button class="remove-btn" data-product="apples">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Product 2 -->
+                        <tr class="cart-item">
+                            <td class="product-cell">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1518569656558-1f25e69d93d3?w=80&h=80&fit=crop" alt="Farm Fresh Eggs" class="product-thumbnail">
+                                    <span class="product-name">Farm Fresh Eggs (Dozen)</span>
+                                </div>
+                            </td>
+                            <td class="quantity-cell">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus-btn" data-product="eggs">-</button>
+                                    <input type="number" class="quantity-input" value="2" min="1" data-product="eggs" data-price="4.50">
+                                    <button class="quantity-btn plus-btn" data-product="eggs">+</button>
+                                </div>
+                            </td>
+                            <td class="price-cell">$4.50</td>
+                            <td class="total-cell" data-product="eggs">$9.00</td>
+                            <td class="actions-cell">
+                                <button class="remove-btn" data-product="eggs">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Product 3 -->
+                        <tr class="cart-item">
+                            <td class="product-cell">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=80&h=80&fit=crop" alt="Whole Wheat Bread" class="product-thumbnail">
+                                    <span class="product-name">Whole Wheat Bread (24 oz loaf)</span>
+                                </div>
+                            </td>
+                            <td class="quantity-cell">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus-btn" data-product="bread">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-product="bread" data-price="3.75">
+                                    <button class="quantity-btn plus-btn" data-product="bread">+</button>
+                                </div>
+                            </td>
+                            <td class="price-cell">$3.75</td>
+                            <td class="total-cell" data-product="bread">$3.75</td>
+                            <td class="actions-cell">
+                                <button class="remove-btn" data-product="bread">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Product 4 -->
+                        <tr class="cart-item">
+                            <td class="product-cell">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=80&h=80&fit=crop" alt="Sparkling Water" class="product-thumbnail">
+                                    <span class="product-name">Sparkling Water (6-Pack, assorted flavors)</span>
+                                </div>
+                            </td>
+                            <td class="quantity-cell">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus-btn" data-product="water">-</button>
+                                    <input type="number" class="quantity-input" value="3" min="1" data-product="water" data-price="6.25">
+                                    <button class="quantity-btn plus-btn" data-product="water">+</button>
+                                </div>
+                            </td>
+                            <td class="price-cell">$6.25</td>
+                            <td class="total-cell" data-product="water">$18.75</td>
+                            <td class="actions-cell">
+                                <button class="remove-btn" data-product="water">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Product 5 -->
+                        <tr class="cart-item">
+                            <td class="product-cell">
+                                <div class="product-info">
+                                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=80&h=80&fit=crop" alt="Assorted Snack Mix" class="product-thumbnail">
+                                    <span class="product-name">Assorted Snack Mix (16 oz bag)</span>
+                                </div>
+                            </td>
+                            <td class="quantity-cell">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus-btn" data-product="snacks">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-product="snacks" data-price="12.00">
+                                    <button class="quantity-btn plus-btn" data-product="snacks">+</button>
+                                </div>
+                            </td>
+                            <td class="price-cell">$12.00</td>
+                            <td class="total-cell" data-product="snacks">$12.00</td>
+                            <td class="actions-cell">
+                                <button class="remove-btn" data-product="snacks">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="cart-footer">
+                <div class="cart-actions">
+                    <button class="continue-shopping-btn">Continue Shopping</button>
+                    <div class="grand-total">
+                        <span class="total-label">Grand Total:</span>
+                        <span class="total-amount" id="grand-total">PKR 0</span>
+                    </div>
+                    <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="#" class="footer-link">Quick Links</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

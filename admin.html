@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - QuickMart PK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Top Header -->
+    <header class="admin-header">
+        <div class="admin-header-container">
+            <!-- Logo -->
+            <div class="admin-logo">
+                <img src="assets/quickmart-logo.png" alt="QuickMart PK" class="logo-image">
+            </div>
+            
+            <!-- Header Icons -->
+            <div class="admin-header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Left Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <div class="nav-item active">
+                    <i class="fas fa-box"></i>
+                    <span>Manage Products</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-folder"></i>
+                    <span>Manage Categories</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Manage Orders</span>
+                </div>
+            </nav>
+            
+            <div class="admin-actions">
+                <button class="logout-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    Logout
+                </button>
+                <p class="admin-actions-text">Admin Actions</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-content">
+                <h1 class="admin-title">Admin Dashboard</h1>
+                
+                <div class="section-header">
+                    <h2 class="section-title">Product Listing</h2>
+                    <button class="add-product-btn">
+                        <i class="fas fa-plus"></i>
+                        Add New Product
+                    </button>
+                </div>
+
+                <!-- Product Table -->
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr class="table-header">
+                                <th class="image-col">Image</th>
+                                <th class="name-col">Name</th>
+                                <th class="price-col">Price</th>
+                                <th class="category-col">Category</th>
+                                <th class="actions-col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Product 1 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=60&h=60&fit=crop" alt="Organic Fuji Apples" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Organic Fuji Apples (1kg)</td>
+                                <td class="price-cell">$3.99</td>
+                                <td class="category-cell">Produce</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="apples">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="apples">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Product 2 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=60&h=60&fit=crop" alt="Premium Ground Coffee" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Premium Ground Coffee (500g)</td>
+                                <td class="price-cell">$8.50</td>
+                                <td class="category-cell">Beverages</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="coffee">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="coffee">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Product 3 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=60&h=60&fit=crop" alt="Artisan Sourdough Bread" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Artisan Sourdough Bread</td>
+                                <td class="price-cell">$4.25</td>
+                                <td class="category-cell">Bakery</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="bread">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="bread">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Product 4 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=60&h=60&fit=crop" alt="Extra Virgin Olive Oil" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Extra Virgin Olive Oil (750ml)</td>
+                                <td class="price-cell">$12.00</td>
+                                <td class="category-cell">Pantry</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="olive-oil">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="olive-oil">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Product 5 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=60&h=60&fit=crop" alt="Fresh Atlantic Salmon" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Fresh Atlantic Salmon Fillet (200g)</td>
+                                <td class="price-cell">$7.99</td>
+                                <td class="category-cell">Meat & Seafood</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="salmon">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="salmon">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Product 6 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=60&h=60&fit=crop" alt="Local Honey" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Local Honey (300g)</td>
+                                <td class="price-cell">$6.75</td>
+                                <td class="category-cell">Pantry</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="honey">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="honey">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Product 7 -->
+                            <tr class="table-row">
+                                <td class="image-cell">
+                                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=60&h=60&fit=crop" alt="Whole Milk" class="product-thumb">
+                                </td>
+                                <td class="name-cell">Whole Milk (1L)</td>
+                                <td class="price-cell">$2.10</td>
+                                <td class="category-cell">Dairy</td>
+                                <td class="actions-cell">
+                                    <button class="edit-btn" data-product="milk">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                    <button class="delete-btn" data-product="milk">
+                                        <i class="fas fa-trash"></i>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

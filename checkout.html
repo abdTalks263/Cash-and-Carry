@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - QuickMart PK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/quickmart-logo.png" alt="QuickMart PK" class="logo-image">
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="cart.html" class="nav-link">Cart <span class="cart-count" style="display: none;">0</span></a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="admin.html" class="nav-link admin-dashboard-link" style="display: none;">Admin Dashboard</a>
+                <a href="#" class="nav-link logout-link" style="display: none;">Logout</a>
+            </nav>
+            
+            <!-- Header Icons -->
+            <div class="header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="checkout-main">
+        <div class="checkout-container">
+            <h1 class="checkout-title">Checkout</h1>
+            
+            <div class="checkout-content">
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2 class="summary-title">Order Summary</h2>
+                    <div class="summary-items" id="checkout-items">
+                        <!-- Items will be loaded dynamically -->
+                    </div>
+                    <div class="summary-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">PKR 0</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Delivery Fee:</span>
+                            <span id="delivery-fee">PKR 150</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (5%):</span>
+                            <span id="tax">PKR 0</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Grand Total:</span>
+                            <span id="grand-total">PKR 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <!-- Customer Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Customer Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" placeholder="+92 300 1234567" required>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Address -->
+                        <div class="form-section">
+                            <h3 class="section-title">Delivery Address</h3>
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" placeholder="House/Flat No, Street Name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" placeholder="Karachi" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postalCode">Postal Code</label>
+                                    <input type="text" id="postalCode" placeholder="75000">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province *</label>
+                                <select id="province" required>
+                                    <option value="">Select Province</option>
+                                    <option value="Sindh">Sindh</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="KPK">Khyber Pakhtunkhwa</option>
+                                    <option value="Balochistan">Balochistan</option>
+                                    <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+                                    <option value="AJK">Azad Jammu & Kashmir</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h3 class="section-title">Payment Method</h3>
+                            <div class="payment-methods">
+                                <div class="payment-option">
+                                    <input type="radio" id="card" name="paymentMethod" value="card">
+                                    <label for="card" class="payment-label">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Credit/Debit Card</span>
+                                    </label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="cash" name="paymentMethod" value="cash">
+                                    <label for="cash" class="payment-label">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>Cash on Delivery</span>
+                                    </label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="jazzcash" name="paymentMethod" value="jazzcash">
+                                    <label for="jazzcash" class="payment-label">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>JazzCash</span>
+                                    </label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="easypaisa" name="paymentMethod" value="easypaisa">
+                                    <label for="easypaisa" class="payment-label">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>EasyPaisa</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Card Payment Details -->
+                            <div class="card-details" id="cardDetails" style="display: none;">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number *</label>
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date *</label>
+                                        <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" placeholder="123" maxlength="3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card *</label>
+                                    <input type="text" id="cardName" placeholder="John Doe">
+                                </div>
+                            </div>
+
+                            <!-- Mobile Payment Details -->
+                            <div class="mobile-payment-details" id="mobilePaymentDetails" style="display: none;">
+                                <div class="form-group">
+                                    <label for="mobileNumber">Mobile Number *</label>
+                                    <input type="tel" id="mobileNumber" placeholder="+92 300 1234567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="accountName">Account Name *</label>
+                                    <input type="text" id="accountName" placeholder="Your Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <h3 class="section-title">Order Notes (Optional)</h3>
+                            <div class="form-group">
+                                <label for="notes">Special Instructions</label>
+                                <textarea id="notes" rows="3" placeholder="Any special delivery instructions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="checkout-actions">
+                            <button type="button" class="back-to-cart-btn" onclick="window.location.href='cart.html'">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to Cart
+                            </button>
+                            <button type="submit" class="place-order-btn">
+                                <i class="fas fa-shopping-bag"></i>
+                                Place Order
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="#" class="footer-link">Quick Links</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
